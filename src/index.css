@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+    /* Enterprise SaaS palette */
+    --background: 210 40% 98%; /* #F8FAFC */
+    --foreground: 222 47% 11%; /* #0F172A */
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 12%;
+
+    --primary: 239 84% 67%; /* #6366F1 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 230 25% 12%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 93%;
+    --accent-foreground: 230 25% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 239 84% 67%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 222 47% 11%; /* #0F172A */
+    --sidebar-foreground: 220 14% 80%;
+    --sidebar-primary: 239 84% 67%; /* #6366F1 */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 20% 15%;
+    --sidebar-accent-foreground: 220 14% 90%;
+    --sidebar-border: 230 20% 16%;
+    --sidebar-ring: 239 84% 67%;
+    --sidebar-muted: 220 9% 46%;
+
+    --success: 152 69% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+    /* Subtle “premium” far-background mesh + grid */
+    background-image:
+      radial-gradient(900px circle at 12% 8%, rgba(99, 102, 241, 0.16), transparent 55%),
+      radial-gradient(700px circle at 88% 18%, rgba(168, 85, 247, 0.10), transparent 55%),
+      linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+    background-size: auto, auto, 56px 56px, 56px 56px;
+    background-position: center, center, -1px -1px, -1px -1px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    /* Glassmorphism: white @ 80%, subtle border, floating shadow */
+    @apply bg-white/80 border shadow-sm;
+    border-color: #E2E8F0;
+    box-shadow:
+      0 1px 1px rgba(15, 23, 42, 0.04),
+      0 10px 24px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(10px) saturate(140%);
+  }
+}
